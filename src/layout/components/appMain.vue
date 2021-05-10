@@ -12,16 +12,16 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed, Component } from 'vue';
-  import { useRoute } from 'vue-router';
-  export default defineComponent({
-    name: 'appMain',
-    setup() {
-      const route = useRoute();
-      const key = computed(() => route.path);
-      return { key };
-    },
-  });
+import { defineComponent, computed, Component } from 'vue'
+import { useRoute } from 'vue-router'
+export default defineComponent({
+  name: 'appMain',
+  setup() {
+    const route = useRoute()
+    const key = computed(() => route.path)
+    return { key }
+  },
+})
 </script>
 
 <style scoped lang="less"></style>

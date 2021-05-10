@@ -6,19 +6,19 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed, ref } from 'vue';
-  import Menus from './components/menus.vue';
-  export default defineComponent({
-    name: 'freeMenu',
-    setup() {
-      return {
-        collapsed: ref<boolean>(false),
-      };
-    },
-    components: {
-      Menus,
-    },
-  });
+import { defineComponent, computed, ref } from 'vue'
+import Menus from './components/menus.vue'
+export default defineComponent({
+  name: 'freeMenu',
+  setup() {
+    return {
+      collapsed: ref<boolean>(false),
+    }
+  },
+  components: {
+    Menus,
+  },
+})
 </script>
 
 <style scoped lang="less"></style>

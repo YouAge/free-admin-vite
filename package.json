@@ -5,9 +5,9 @@
     "dev": " cross-env vite  --mode=development",
     "build": "vue-tsc --noEmit && vite build --mode=production",
     "serve": "vite preview",
-    "lint": "eslint --ext .ts,vue src/** --no-error-on-unmatched-pattern",
+    "lint": "eslint --fix --ext src/** --no-error-on-unmatched-pattern",
     "lints": "eslint --fix --ext src/**/*.{vue,less,css,scss}",
-    "lint:prettier": "prettier --write --loglevel warn src/**/*.{js,json,tsx,css,less,scss,vue,html,md}"
+    "lint:prettier": "npx prettier --write src/**/*.{vue,less,css,scss,ts,js,tsx}"
   },
   "dependencies": {
     "ant-design-vue": "^2.1.4",

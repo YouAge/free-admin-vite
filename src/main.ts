@@ -1,17 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import router from "./router";
+import router from './router'
 
-import { setupAntd } from './plugins/ant-design';
-const app = createApp(App);
+import { setupAntd } from './plugins/ant-design'
+const app = createApp(App)
 // app.config.globalProperties 挂载全局
 
-app
-  .use(setupAntd)
-  .use(router)
-  .mount('#app')
-
+app.use(setupAntd).use(router).mount('#app')
 
 const win: any = window //
 if (process.env.NODE_ENV === 'development') {

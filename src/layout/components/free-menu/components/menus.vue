@@ -17,22 +17,26 @@
 </template>
 
 <script lang="ts">
-  import { UserOutlined, VideoCameraOutlined, UploadOutlined } from '@ant-design/icons-vue';
-  import { defineComponent, computed, ref } from 'vue';
+import {
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+} from '@ant-design/icons-vue'
+import { defineComponent, computed, ref } from 'vue'
 
-  export default defineComponent({
-    name: 'menus',
-    setup() {
-      return {
-        selectedKeys: ref<string[]>(['1']),
-      };
-    },
-    components: {
-      UploadOutlined,
-      VideoCameraOutlined,
-      UserOutlined,
-    },
-  });
+export default defineComponent({
+  name: 'menus',
+  setup() {
+    return {
+      selectedKeys: ref<string[]>(['1']),
+    }
+  },
+  components: {
+    UploadOutlined,
+    VideoCameraOutlined,
+    UserOutlined,
+  },
+})
 </script>
 
 <style scoped lang="less"></style>

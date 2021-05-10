@@ -1,45 +1,42 @@
 <!--github： https://github.com/YouAge-->
 <template>
   <a-layout>
-<!--    // hooks 组件测试-->
-  <free-menu />
-
-
+    <!--    // hooks 组件测试-->
+    <free-menu />
   </a-layout>
 </template>
 
-<script lang='ts'>
-import { defineComponent, computed,ref } from 'vue'
+<script lang="ts">
+  import { defineComponent, computed, ref } from 'vue';
 
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons-vue';
-import{ freeMenu} from "./components";
-export default defineComponent({
-  name: "Layout",
-  setup() {
-    return {
-      selectedKeys: ref<string[]>(['1']),
-      collapsed: ref<boolean>(false),
-    };
-  },
-  components: {
-    freeMenu,
+  import {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
-  },
-})
+  } from '@ant-design/icons-vue';
+  import { freeMenu } from './components';
+  export default defineComponent({
+    name: 'Layout',
+    setup() {
+      return {
+        selectedKeys: ref<string[]>(['1']),
+        collapsed: ref<boolean>(false),
+      };
+    },
+    components: {
+      freeMenu,
+      UserOutlined,
+      VideoCameraOutlined,
+      UploadOutlined,
+      MenuUnfoldOutlined,
+      MenuFoldOutlined,
+    },
+  });
 </script>
 
-<style scoped lang='less'>
-
+<style scoped lang="less">
   .trigger {
     font-size: 18px;
     line-height: 64px;
@@ -48,7 +45,7 @@ export default defineComponent({
     transition: color 0.3s;
   }
 
-.trigger:hover {
+  .trigger:hover {
     color: #1890ff;
   }
 
@@ -61,6 +58,4 @@ export default defineComponent({
   .site-layout .site-layout-background {
     background: #fff;
   }
-
-
 </style>

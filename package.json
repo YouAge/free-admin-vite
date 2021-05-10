@@ -55,6 +55,6 @@
   },
   "lint-staged": {
     "*.{ts,vue}": "eslint --fix",
-    "*": "prettier -w -u"
+    "*": "prettier -write"
   }
 }

@@ -9,10 +9,4 @@ const app = createApp(App)
 
 app.use(setupAntd).use(router).mount('#app')
 
-const win: any = window //
-if (process.env.NODE_ENV === 'development') {
-  if ('__VUE_DEVTOOLS_GLOBAL_HOOK__' in win) {
-    // 这里__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue赋值一个createApp实例
-    win.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app
-  }
-}
+

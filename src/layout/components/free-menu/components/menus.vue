@@ -11,7 +11,7 @@
     </a-menu-item>
     <a-menu-item key="3" v-for="item in 40" :key="item">
       <upload-outlined />
-      <span>nav {{item}}</span>
+      <span>nav {{ item }}</span>
     </a-menu-item>
   </a-menu>
 </template>

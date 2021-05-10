@@ -8,5 +8,3 @@ const app = createApp(App)
 // app.config.globalProperties 挂载全局
 
 app.use(setupAntd).use(router).mount('#app')
-
-

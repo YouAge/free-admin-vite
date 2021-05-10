@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint": "eslint --fix --ext src/** --no-error-on-unmatched-pattern",
     "lints": "eslint --fix --ext src/**/*.{vue,less,css,scss}",
-    "lint:prettier": "npx prettier --write src/**/*.{vue,less,css,scss,ts,js,tsx}"
+    "lint:prettier": "npx prettier --write **/*.{vue,less,css,scss,ts,js,tsx}"
   },
   "dependencies": {
     "ant-design-vue": "^2.1.4",

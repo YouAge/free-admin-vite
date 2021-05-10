@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, Component } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
 export default defineComponent({
   name: 'appMain',
@@ -24,4 +24,11 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.app-main{
+  min-height: calc(100vh - 75px);
+  padding: 10px 15px;
+  background: #eeeeee;
+}
+
+</style>

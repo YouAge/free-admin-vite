@@ -1,19 +1,19 @@
-import { resolve } from 'path';
-import vue from '@vitejs/plugin-vue';
-import { UserConfigExport, ConfigEnv, loadEnv } from 'vite';
-import { wrapperEnv } from './bulid/utils';
-import styleImport from 'vite-plugin-style-import';
+import { resolve } from 'path'
+import vue from '@vitejs/plugin-vue'
+import { UserConfigExport, ConfigEnv, loadEnv } from 'vite'
+import { wrapperEnv } from './bulid/utils'
+// import styleImport from 'vite-plugin-style-import'
 
 function pathResolve(dir: string) {
-  return resolve(__dirname, '.', dir);
+  return resolve(__dirname, '.', dir)
 }
-const root: string = process.cwd();
+const root: string = process.cwd()
 const alias: Record<string, string> = {
   '@': pathResolve('src'),
-};
+}
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
-  const env = loadEnv(mode, root); // 加载 .env.{mode}
-  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } = wrapperEnv(env);
+  const env = loadEnv(mode, root) // 加载 .env.{mode}
+  const { VITE_PORT, VITE_PUBLIC_PATH } = wrapperEnv(env)
   return {
     root,
     base: VITE_PUBLIC_PATH,
@@ -38,5 +38,5 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       //   }]
       // })
     ],
-  };
-};
+  }
+}

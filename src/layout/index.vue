@@ -3,7 +3,11 @@
   <a-layout>
     <!--    // hooks 组件测试-->
     <free-menu />
-    <free-header />
+    <a-layout>
+      <free-header />
+      <app-main />
+    </a-layout>
+
   </a-layout>
 </template>
 
@@ -17,7 +21,7 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons-vue'
-import { freeMenu,freeHeader } from './components'
+import { freeMenu, freeHeader,appMain } from './components'
 
 export default defineComponent({
   name: 'Layout',
@@ -28,6 +32,7 @@ export default defineComponent({
     }
   },
   components: {
+    appMain,
     freeHeader,
     freeMenu,
     UserOutlined,

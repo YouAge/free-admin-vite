@@ -1,18 +1,26 @@
 <!--github： https://github.com/YouAge-->
 <template>
   <a-layout-sider v-model:collapsed="collapsed" class="f-scroll">
-    <menus />
+    <a-menu theme="dark" mode="inline" :inline-collapsed="collapsed">
+  
+   <menus v-for="route in routers" :key="route.path" :base-path="route.path"/>
+  </a-menu>
   </a-layout-sider>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
 import Menus from './components/menus.vue'
+import {useStore} from 'vuex'
+import {useRoute,useRouter} from 'vue-router'
 export default defineComponent({
   name: 'freeMenu',
   setup() {
+    const router = useRouter().options.routes;
+    const store = useStore()
     return {
-      collapsed: ref<boolean>(false),
+      routers:router,
+      collapsed: computed(() => store.getters.collapsed),
     }
   },
   components: {

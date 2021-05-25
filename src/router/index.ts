@@ -13,15 +13,15 @@ import {
 import Layout from '../layout/index.vue'
 import NProgress from '../utils/progress'
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'index',
     component: Layout,
-    redirect: '/home',
+    redirect: 'home',
     children: [
       {
-        path: '/home',
+        path: 'home',
         name: 'home',
         component: () => import('@/views/home/index.vue'),
         meta: {
@@ -31,6 +31,45 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+
+
+{
+  path:'/compunt',
+  name:'compunt',
+  component:Layout,
+  redirect:'compunt',
+  children:[
+      {
+        path: 'exec',
+        name: 'exec',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+          title: '表格',
+          icon: '',
+        },
+      },
+      {
+        path: 'ivdeo',
+        name: 'ivdeo',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+          title: '视频',
+          icon: '',
+        },
+      },
+      {
+        path: 'img',
+        name: 'img',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+          title: '图片',
+          icon: '',
+        },
+      }
+  ]
+}
+
+
 ]
 
 const router = createRouter({

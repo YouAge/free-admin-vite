@@ -367,6 +367,11 @@
   dependencies:
     "@types/braces" "*"
 
+"@types/node@^15.6.0":
+  version "15.6.0"
+  resolved "https://registry.nlark.com/@types/node/download/@types/node-15.6.0.tgz?cache=0&sync_timestamp=1621593401299&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-15.6.0.tgz#f0ddca5a61e52627c9dcb771a6039d44694597bc"
+  integrity sha1-8N3KWmHlJifJ3LdxpgOdRGlFl7w=
+
 "@typescript-eslint/eslint-plugin@^4.22.1":
   version "4.22.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.22.1.tgz#6bcdbaa4548553ab861b4e5f34936ead1349a543"
@@ -1115,10 +1120,10 @@ echarts@^5.1.1:
     tslib "2.0.3"
     zrender "5.1.0"
 
-element-plus@^1.0.2-beta.41:
-  version "1.0.2-beta.42"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.0.2-beta.42.tgz#f2e4ca612e7757cd4b3bbb22b223540f37389ce9"
-  integrity sha512-6BS8hC2Bs3bggHQ7CdY+pQ+AJmZhQm3UGqA3Bh2mSNC+f2Fk5IELBvi/J1zRdz69LCCW5f9XEWf5B7OrOIfcKQ==
+element-plus@^1.0.2-beta.44:
+  version "1.0.2-beta.44"
+  resolved "https://registry.nlark.com/element-plus/download/element-plus-1.0.2-beta.44.tgz?cache=0&sync_timestamp=1620703654071&other_urls=https%3A%2F%2Fregistry.nlark.com%2Felement-plus%2Fdownload%2Felement-plus-1.0.2-beta.44.tgz#7aff122e6181088223027adb65a4a8321e1ef4e9"
+  integrity sha1-ev8SLmGBCIIjAnrbZaSoMh4e9Ok=
   dependencies:
     "@popperjs/core" "^2.4.4"
     "@types/lodash" "^4.14.161"

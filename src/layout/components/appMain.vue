@@ -25,10 +25,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-.app-main{
+.app-main {
   min-height: calc(100vh - 75px);
   padding: 10px 15px;
   background: #eeeeee;
 }
-
 </style>

@@ -1,30 +1,49 @@
 <!--github： https://github.com/YouAge-->
 <template>
   <a-layout-sider v-model:collapsed="collapsed" class="f-scroll">
-    <a-menu theme="dark" mode="inline" :inline-collapsed="collapsed">
-  
-   <menus v-for="route in routers" :key="route.path" :base-path="route.path"/>
-  </a-menu>
+    <a-menu theme="dark" mode="inline"
+    @click="clickMenuItem"
+    :inline-collapsed="collapsed">
+      <menus
+        v-for="route in routers"
+        :key="route.name"
+        :item="route"
+      />
+    </a-menu>
   </a-layout-sider>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
 import Menus from './components/menus.vue'
-import {useStore} from 'vuex'
-import {useRoute,useRouter} from 'vue-router'
+import { useStore } from 'vuex'
+import { useRoute, useRouter } from 'vue-router'
 export default defineComponent({
   name: 'freeMenu',
   setup() {
-    const router = useRouter().options.routes;
+    const routers = useRouter().options.routes
+    const router = useRouter()
     const store = useStore()
+    console.log(router)
+
+    // 点击菜单
+    const clickMenuItem = ({ item, key, keyPath }) =>{
+      if (/http(s)?:/.test(key)) {
+        window.open(key)
+      } else {
+        router.push({ name: key })
+      }
+    }
+
     return {
-      routers:router,
+      routers,
       collapsed: computed(() => store.getters.collapsed),
+      clickMenuItem
     }
   },
   components: {
     Menus,
+
   },
 })
 </script>

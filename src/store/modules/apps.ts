@@ -1,15 +1,8 @@
+export default {
+  state: {
+    collapsed: false,
+    device: '',
+  },
 
-
-export default{
-
-state:{
-
-  collapsed: false,
-  device: '' 
-
-},
-
-  getters:{
-    
-  }
+  getters: {},
 }

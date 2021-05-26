@@ -7,9 +7,4 @@ import { setupAntd } from './plugins/ant-design'
 const app = createApp(App)
 // app.config.globalProperties 挂载全局
 
-
-
-app.use(setupAntd)
-.use(router)
-.use(store)
-.mount('#app')
+app.use(setupAntd).use(router).use(store).mount('#app')

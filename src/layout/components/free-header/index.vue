@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { MenuUnfoldOutlined,MenuFoldOutlined } from '@ant-design/icons-vue'
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
@@ -29,7 +29,6 @@ export default defineComponent({
       collapsed: ref<boolean>(false),
     }
   },
-
 })
 </script>
 

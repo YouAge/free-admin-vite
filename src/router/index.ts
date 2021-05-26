@@ -19,6 +19,11 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'index',
     component: Layout,
     redirect: 'home',
+    meta: {
+      title: '首页',
+      icon: '',
+      hidden: false,
+    },
     children: [
       {
         path: 'home',
@@ -27,18 +32,23 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '首页',
           icon: '',
+          hidden: false,
         },
       },
     ],
   },
 
-
-{
-  path:'/compunt',
-  name:'compunt',
-  component:Layout,
-  redirect:'compunt',
-  children:[
+  {
+    path: '/compunt',
+    name: 'compunt',
+    component: Layout,
+    redirect: 'compunt',
+    meta: {
+      title: '组件',
+      icon: '',
+      hidden: false,
+    },
+    children: [
       {
         path: 'exec',
         name: 'exec',
@@ -46,6 +56,7 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '表格',
           icon: '',
+          hidden: false,
         },
       },
       {
@@ -55,21 +66,21 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '视频',
           icon: '',
+          hidden: false,
         },
       },
       {
-        path: 'img',
+        path: 'https://www.baidu.com/',
         name: 'img',
         component: () => import('@/views/home/index.vue'),
         meta: {
           title: '图片',
           icon: '',
+          hidden: false,
         },
-      }
-  ]
-}
-
-
+      },
+    ],
+  },
 ]
 
 const router = createRouter({

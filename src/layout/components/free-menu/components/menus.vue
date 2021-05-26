@@ -1,65 +1,56 @@
 <!--github： https://github.com/YouAge-->
 <template>
-  <template v-if="!menuItem.hidden">
-    <a-sub-menu v-if="menuItem.children?.length" :key="menuItem.name" v-bind="$attrs">
+  <div v-if="!item.meta.hidden">
+   <a-sub-menu v-if="item.children?.length" :key="item.name" v-bind="$attrs">
       <template #title>
-        <span>
-          
-          <InboxOutlined />
-          <span>{{ menuItem.meta.title }}</span>
-        </span>
+          <span>
+            <AppstoreOutlined />
+            <span>{{item.meta.title}}</span>
+          </span>
       </template>
-      <template v-for="item in menuItem.children" :key="item.name">
-        <template v-if="!item.children">
-          <a-menu-item :key="item.name">
-            <InboxOutlined />
-            <span>{{ item.meta.title }}</span>
+      <template v-for="child in item.children" :key="child.name">
+        <template v-if="!child.children || child.children.length ===0">
+          <a-menu-item :key="child.name">
+            <AppstoreOutlined />
+            <span>{{ child.meta.title }}</span>
           </a-menu-item>
         </template>
         <template v-else>
-          <menus :key="item.name" :menu-item="item" />
+          <menus :item="child.children" />
         </template>
       </template>
-    </a-sub-menu>
-    <a-menu-item v-else :key="menuItem.name">
-      <InboxOutlined />
-      <span>{{ menuItem.meta.title }}</span>
+   </a-sub-menu>
+    <a-menu-item
+        :key="item.name" v-else>
+      <PieChartOutlined />
+      <span>{{ item.meta.title }}</span>
     </a-menu-item>
-  </template>
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  InboxOutlined
-} from '@ant-design/icons-vue'
-import { defineComponent, computed, ref } from 'vue'
 
+import { PieChartOutlined, AppstoreOutlined } from '@ant-design/icons-vue'
+import { defineComponent, PropType, ref } from 'vue'
+import { RouteRecordRaw } from 'vue-router'
 export default defineComponent({
   name: 'menus',
-  props:{
-    menuItem:{
-      type:Object,
-      default:{}
+  props: {
+    item: {
+      type: Object as PropType<RouteRecordRaw>,
+      required: true,
     },
-    basePath:{
-      type:String,
-      default:''
-    }
-
-  },
-  setup() {
-    return {
-      selectedKeys: ref<string[]>(['1']),
-    }
+    basePath: {
+      type: String,
+      default: '',
+    },
   },
   components: {
-    UploadOutlined,
-    VideoCameraOutlined,
-    UserOutlined,
-    InboxOutlined
+    PieChartOutlined,
+    AppstoreOutlined,
+  },
+  setup(props) {
+
   },
 })
 </script>

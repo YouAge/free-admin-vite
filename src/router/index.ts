@@ -8,10 +8,10 @@ import {
   createWebHashHistory,
   createRouter,
   createRouterMatcher,
-} from 'vue-router'
+} from 'vue-router';
 
-import Layout from '../layout/index.vue'
-import NProgress from '../utils/progress'
+import Layout from '../layout/index.vue';
+import NProgress from '../utils/progress';
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -81,20 +81,20 @@ export const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
-]
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-})
+});
 
 router.beforeEach((to, from, next) => {
-  NProgress.start()
-  next()
-})
+  NProgress.start();
+  next();
+});
 
 router.afterEach(() => {
-  NProgress.done()
-})
+  NProgress.done();
+});
 
-export default router
+export default router;

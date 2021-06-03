@@ -6,28 +6,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+  import { defineComponent, computed } from 'vue';
 
-export default defineComponent({
-  name: 'Link',
-  props: {
-    to: {
-      type: String,
-      required: true,
+  export default defineComponent({
+    name: 'Link',
+    props: {
+      to: {
+        type: String,
+        required: true,
+      },
     },
-  },
-  setup(props) {
-    const linkProps = to => {
+    setup(props) {
+      const linkProps = (to) => {
+        return {
+          to: to,
+        };
+      };
       return {
-        to: to,
-      }
-    }
-    return {
-      type: 'router-link',
-      linkProps,
-    }
-  },
-})
+        type: 'router-link',
+        linkProps,
+      };
+    },
+  });
 </script>
 
 <style scoped lang="less"></style>

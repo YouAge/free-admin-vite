@@ -3,7 +3,7 @@
  *@ 文件简介： ant-design 按需导入
  */
 
-import type { App } from 'vue'
+import type { App } from 'vue';
 
 import {
   // need
@@ -73,8 +73,8 @@ import {
   Space,
   Image,
   Typography,
-} from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+} from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
 const plugins = [
   version,
@@ -143,14 +143,14 @@ const plugins = [
   Space,
   Image,
   Typography,
-]
+];
 
 export function setupAntd(app: App<Element>) {
   // need
   // Here are the components required before registering and logging in
   // app.use(Form).use(Input).use(Row).use(Col).use(Spin);
 
-  plugins.forEach(plugin => {
-    app.use(plugin)
-  })
+  plugins.forEach((plugin) => {
+    app.use(plugin);
+  });
 }

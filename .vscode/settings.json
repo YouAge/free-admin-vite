@@ -1,0 +1,49 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.proseWrap": "never",
+  "prettier.printWidth": 180,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.wrapAttributes": "force",
+  "prettier.eslintIntegration": true,
+  "prettier.jsxBracketSameLine": true,
+  "eslint.alwaysShowStatus": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.tabSize": 2,
+  "prettier.useTabs": true,
+  "eslint.options": {
+    "extensions": [".js", ".vue", ".ts", ".tsx"]
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.run": "onSave",
+  "javascript.validate.enable": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "files.autoSave": "afterDelay",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "tslint.run": "onSave",
+  "eslint.format.enable": true,
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true,
+      "semi": false,
+      "eslintIntegration": true
+    }
+  }
+}

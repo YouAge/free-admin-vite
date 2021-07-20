@@ -1,68 +1,67 @@
 <!--github： https://github.com/YouAge-->
 <template>
-  <a-layout>
-    <!--    // hooks 组件测试-->
-    <free-menu />
-    <a-layout>
-      <free-header />
-      <app-main />
-    </a-layout>
-  </a-layout>
+  <Layout class="layout">
+    <!--    //  login，和header-->
+    <SiderDefault />
+    <Layout>
+      <PageHeader></PageHeader>
+      <Content class="layout-content">
+        <PaperContent />
+      </Content>
+      <!--    //页脚-->
+    </Layout>
+  </Layout>
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed, ref } from 'vue';
-
-  import {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-  } from '@ant-design/icons-vue';
-  import { freeMenu, freeHeader, appMain } from './components';
-
+  import { defineComponent, computed, ref } from 'vue'
+  import { Layout, LayoutSider } from 'ant-design-vue'
+  import PageHeader from '@/layout/header/index.vue'
+  import { PaperContent } from '@/layout/content'
+  import { SiderDefault } from '@/layout/sider'
+  import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons-vue'
   export default defineComponent({
-    name: 'Layout',
+    name: 'index',
+    components: {
+      Layout,
+      Content: Layout.Content,
+      PageHeader,
+      PaperContent,
+      LayoutSider,
+      UserOutlined,
+      LaptopOutlined,
+      NotificationOutlined,
+      SiderDefault
+    },
     setup() {
       return {
-        selectedKeys: ref<string[]>(['1']),
+        selectedKeys1: ref<string[]>(['2']),
+        selectedKeys2: ref<string[]>(['1']),
         collapsed: ref<boolean>(false),
-      };
-    },
-    components: {
-      appMain,
-      freeHeader,
-      freeMenu,
-      UserOutlined,
-      VideoCameraOutlined,
-      UploadOutlined,
-      MenuUnfoldOutlined,
-      MenuFoldOutlined,
-    },
-  });
+        openKeys: ref<string[]>(['sub1'])
+      }
+    }
+  })
 </script>
 
 <style scoped lang="less">
-  .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .trigger:hover {
-    color: #1890ff;
-  }
-
-  .logo {
-    height: 32px;
+  #components-layout-demo-top-side-2 .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
     background: rgba(255, 255, 255, 0.3);
-    margin: 16px;
   }
 
-  .site-layout .site-layout-background {
+  .ant-row-rtl #components-layout-demo-top-side-2 .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+  }
+
+  .site-layout-background {
     background: #fff;
+  }
+  .ant-layout {
+    min-height: calc(100vh - 64px);
   }
 </style>

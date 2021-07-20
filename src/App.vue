@@ -1,14 +1,20 @@
 <template>
-  <router-view />
+  <AConfigprovider :locale="locale">
+    <router-view />
+  </AConfigprovider>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
-
+  import { defineComponent } from 'vue'
+  import zhCN from 'ant-design-vue/es/locale/zh_CN'
   export default defineComponent({
     name: 'App',
-    components: {},
-  });
+    setup() {
+      return {
+        locale: zhCN
+      }
+    }
+  })
 </script>
 
-<style scoped lang="less"></style>
+<style lang="less"></style>

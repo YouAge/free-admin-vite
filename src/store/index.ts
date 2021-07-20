@@ -1,10 +1,23 @@
-import { createStore } from 'vuex';
-import getters from './getters';
-import apps from './modules/apps';
+/**
+ *@ github： https://github.com/YouAge
+ *@ 文件简介：
+ */
 
-export default createStore({
-  getters,
-  modules: {
-    apps,
-  },
-});
+import type { App } from 'vue'
+import { createPinia } from 'pinia'
+// pinia-plugin-persist 数据持久化插件
+// import app from '@/store/modules/app'
+//
+// export const store = createStore({
+//   modules: {
+//     app
+//   }
+// })
+
+const store = createPinia()
+
+export function setupStore(app: App<Element>) {
+  app.use(store)
+}
+
+export { store }

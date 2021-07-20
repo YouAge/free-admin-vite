@@ -1,42 +1,48 @@
-import { resolve } from 'path';
-import vue from '@vitejs/plugin-vue';
-import { UserConfigExport, ConfigEnv, loadEnv } from 'vite';
-import { wrapperEnv } from './bulid/utils';
-// import styleImport from 'vite-plugin-style-import'
+import { ConfigEnv, defineConfig, UserConfigExport } from 'vite'
 
-function pathResolve(dir: string) {
-  return resolve(__dirname, '.', dir);
-}
-const root: string = process.cwd();
-const alias: Record<string, string> = {
-  '@': pathResolve('src'),
-};
-export default ({ command, mode }: ConfigEnv): UserConfigExport => {
-  const env = loadEnv(mode, root); // 加载 .env.{mode}
-  const { VITE_PORT, VITE_PUBLIC_PATH } = wrapperEnv(env);
+import plugins from './build/plugins'
+import * as path from 'path'
+
+const resolve = (dir: string) => path.join(__dirname, dir)
+
+// https://vitejs.dev/config/
+export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
-    root,
-    base: VITE_PUBLIC_PATH,
-    alias,
-    mode,
-    //服务端渲染
+    plugins, // 插件配置
+
+    define: {
+      'process.env': {
+        BASE_URL: '/',
+        URL: 'http:'
+      }
+    },
+    /** 别名配置*/
+    resolve: {
+      alias: {
+        '@': resolve('src'),
+        comps: resolve('src/components'),
+        api: resolve('src/apis')
+      }
+    },
+    /** 服务端设置*/
     server: {
       https: false,
-      port: VITE_PORT,
+      host: '0.0.0.0',
+      port: 9983,
+      open: false,
+      //设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口
+      strictPort: false,
+      proxy: {} // 设置本地代理
     },
-
-    /** 插件*/
-    plugins: [
-      vue(),
-      // styleImport({
-      //   libs: [{
-      //     libraryName: 'ant-design-vue',
-      //     esModule: true,
-      //     resolveStyle: (name) => {
-      //       return `ant-design-vue/es/${name}/style/css`;
-      //     },
-      //   }]
-      // })
-    ],
-  };
-};
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            hack: `true; @import (reference) "${path.resolve('src/style/index.less')}";`
+          },
+          javascriptEnabled: true
+        }
+      }
+    }
+  }
+}

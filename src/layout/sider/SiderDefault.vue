@@ -18,7 +18,7 @@
     name: 'SiderDefault',
     components: {
       PaperMenus,
-      Sider: Layout.Sider,
+      Sider: Layout.Sider
     },
     setup() {
       const { getCollapsed } = useMenusSetting()

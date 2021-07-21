@@ -4,9 +4,11 @@
     <div class="freeLayoutHeaderLeft">
       <!--     // 图标-->
       <span class="freeMenuFold">
-        <component :is="collapsed ? 'menu-unfold-outlined' : 'menu-fold-outlined'" @click="toggleCollapsed"></component>
+        <component
+          :is="collapsed ? 'menu-unfold-outlined' : 'menu-fold-outlined'"
+          @click="toggleCollapsed"
+        ></component>
       </span>
-
     </div>
     <div class="freeLayoutHeaderAction"></div>
   </Header>
@@ -54,5 +56,9 @@
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
+  }
+  .freeMenuFold {
+    padding: 0 24px;
+    cursor: pointer;
   }
 </style>

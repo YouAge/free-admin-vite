@@ -9,6 +9,7 @@
         <PaperContent />
       </Content>
       <!--    //页脚-->
+      <FFooter />
     </Layout>
   </Layout>
 </template>
@@ -20,9 +21,11 @@
   import { PaperContent } from '@/layout/content'
   import { SiderDefault } from '@/layout/sider'
   import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons-vue'
+  import FFooter from "@/layout/footer/index.vue";
   export default defineComponent({
     name: 'index',
     components: {
+      FFooter,
       Layout,
       Content: Layout.Content,
       PageHeader,
@@ -62,7 +65,7 @@
     background: #fff;
   }
   .ant-layout {
-    min-height: calc(100vh - 64px);
+    min-height: calc(100vh -  @base-header-default );
   }
 
 

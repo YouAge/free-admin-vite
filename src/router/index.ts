@@ -4,14 +4,22 @@
  */
 
 import { createRouter, createWebHashHistory, createMemoryHistory, RouteRecordRaw } from 'vue-router'
+import type { App } from 'vue'
+import { createRouterFilter } from '@/router/router-filter'
+import { routes } from './baseRouter'
 
-const routes: Array<RouteRecordRaw> = [
-  { path: '/', name: 'Home', component: () => import('@/layout/index.vue') }
-]
-console.log(process.env.URL)
 const router = createRouter({
-  history: createMemoryHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
+
+/**
+ * @ 为了好的变更和修改，
+ * */
+export function setupRouter(app: App) {
+  // 创建路由守卫
+  createRouterFilter(router)
+  app.use(router)
+}
 
 export default router

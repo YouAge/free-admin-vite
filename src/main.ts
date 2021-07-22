@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import router from '@/router'
+import {setupRouter} from '@/router'
 import { setupStore, store } from '@/store'
 import App from './App.vue'
 import 'virtual:svg-icons-register'
@@ -12,4 +12,5 @@ import { setupAntd } from '@/plugins/antDesign'
 // setupAntd(app)
 console.log(app.config)
 setupStore(app)
-app.use(router).mount('#app')
+setupRouter(app)
+app.mount('#app')

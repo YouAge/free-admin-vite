@@ -18,3 +18,15 @@ export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
   }
   return src
 }
+
+/**
+ * @description:  是否为字符串
+ */
+export function isString(val: unknown): val is string {
+  return is(val, 'String')
+}
+
+/** 深拷贝*/
+export function deepCopy<T = any>(obj: any = {}): T {
+  return JSON.parse(JSON.stringify(obj))
+}

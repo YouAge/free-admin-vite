@@ -4,6 +4,6 @@
  */
 
 import SvgIcon from './src/SvgIcon.vue'
-
-export { SvgIcon }
+import IconFont from './src/IconFont'
+export { SvgIcon, IconFont }
 export default SvgIcon

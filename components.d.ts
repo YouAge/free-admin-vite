@@ -3,6 +3,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    IconFont: typeof import('./src/components/Icon/src/IconFont.vue')['default']
     SvgIcon: typeof import('./src/components/Icon/src/SvgIcon.vue')['default']
   }
 }

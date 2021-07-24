@@ -13,5 +13,5 @@ export const menuDefault: MenuSetting = {
   show: true,
   hidden: false,
   mode: MenuModeEnum.INLINE,
-  theme: 'light ' //  'dark'  || 'light '
+  theme: 'dark ' //  'dark'  || 'light '
 }

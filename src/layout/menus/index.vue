@@ -9,9 +9,8 @@
     @click="clickMenu"
   >
     <template v-for="item in menuList" :key="item.path">
-      <f-menu-item :menu-item="item"/>
+      <f-menu-item :menu-item="item" />
     </template>
-
   </a-menu>
 </template>
 
@@ -28,6 +27,9 @@
     components: {
       FMenuItem,
       AMenu: Menu,
+      AMenuItem:Menu.Item,
+      ASubMenu: Menu.SubMenu,
+
     },
     setup() {
       const router = useRouter()

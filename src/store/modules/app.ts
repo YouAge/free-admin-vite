@@ -10,6 +10,7 @@ import { MENU_CACHE_KEY } from '@/enums/cacheMnum'
 import { deepMerge } from '@/utils'
 import { MenuSetting } from 'types/config'
 import { menuDefault } from '@/config'
+import { DeepPartial } from '../../../types/global'
 
 interface AppState {
   MenuConfig: MenuSetting | null
@@ -23,7 +24,6 @@ export const useAppStore = defineStore({
   getters: {
     /** 获取主题设置*/
     getMenuSetting(): MenuSetting {
-      console.log('a', this.MenuConfig || ({} as MenuSetting))
       return this.MenuConfig || ({} as MenuSetting)
     }
   },
@@ -31,7 +31,6 @@ export const useAppStore = defineStore({
     setMenusSetting(config: DeepPartial<MenuSetting>): void {
       // 设置数据
       this.MenuConfig = deepMerge(this.MenuConfig || {}, config)
-      console.log(this.MenuConfig)
       // 存储数据 菜单配置---
     }
   }

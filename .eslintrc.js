@@ -10,10 +10,16 @@ module.exports = {
   },
   //代表你启动哪些lint选项，如果多个规则直接有冲突的话，extends后面的选项会覆盖前面的。
   extends: [
+    // 'plugin:vue/vue3-recommended',
+    // 'plugin:@typescript-eslint/recommended',
+    // 'prettier/@typescript-eslint',
+    // 'plugin:prettier/recommended'
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended'
   ],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',

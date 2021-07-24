@@ -2,15 +2,15 @@
 <template>
   <div>
     <FTabs></FTabs>
-<!--    <RouterView>-->
-<!--   // 添加全局消息关播-->
-      <div class="free-page-view">
-        <router-view>
-        </router-view>
-      </div>
-
-
-<!--    </RouterView>-->
+    <div class="free-page-view">
+      <router-view :key="key" v-slot="{ Component }">
+        <transition appear name="fade-transform" mode="out-in">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </transition>
+      </router-view>
+    </div>
   </div>
 </template>
 
@@ -18,6 +18,7 @@
   import { defineComponent, computed } from 'vue'
   import FTabs from "@/layout/tabs/FTabs.vue";
   import {Card} from "ant-design-vue";
+  import {useRoute} from "vue-router";
 
   export default defineComponent({
     name: 'PaperContent',
@@ -25,7 +26,11 @@
       FTabs,
       ACard:Card
     },
-    setup() {}
+    setup() {
+      const route = useRoute();
+      const key = computed(() => route.path);
+      return { key };
+    }
   })
 </script>
 

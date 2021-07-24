@@ -13,7 +13,7 @@
           <template v-if="!item.children">
             <a-menu-item :key="item.path">
               <template #icon>
-                <icon-font style="color: black" :type="item.meta.icon" />
+                <icon-font style="color: aliceblue" :type="item.meta.icon" />
               </template>
               <span>{{item.meta.title}}</span>
             </a-menu-item>
@@ -24,11 +24,7 @@
         </template>
       </a-sub-menu>
       <a-menu-item v-else :key="menuItem.path" >
-<!--/*        <icon-font style="color: aliceblue" :type="menuItem.meta.icon" />*/-->
-        <template #icon>
-          <svg-icon name="free-user" color="#000"/>
-<!--          <PieChartOutlined />-->
-        </template>
+          <icon-font style="color: aliceblue" :type="menuItem.meta.icon" />
         <span>{{menuItem.meta.title}}</span>
       </a-menu-item>
     </template>

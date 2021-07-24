@@ -20,7 +20,6 @@
   import PageHeader from '@/layout/header/index.vue'
   import { PaperContent } from '@/layout/content'
   import { SiderDefault } from '@/layout/sider'
-  import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons-vue'
   import FFooter from "@/layout/footer/index.vue";
   export default defineComponent({
     name: 'index',
@@ -31,9 +30,6 @@
       PageHeader,
       PaperContent,
       LayoutSider,
-      UserOutlined,
-      LaptopOutlined,
-      NotificationOutlined,
       SiderDefault
     },
     setup() {
@@ -64,9 +60,9 @@
   .site-layout-background {
     background: #fff;
   }
-  .ant-layout {
-    min-height: calc(100vh -  @base-header-default );
-  }
+  //.ant-layout {
+  //  min-height: calc(100vh -  @base-header-default );
+  //}
 
 
 </style>

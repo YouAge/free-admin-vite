@@ -7,8 +7,9 @@ import { defineComponent, PropType, computed, unref } from 'vue'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
 import { isString } from '@/utils'
 let MyIcon = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'
-  // scriptUrl: ''
+  // scriptUrl: '//at.alicdn.com/t/font_2694519_al1vtfv47i.js'
+  // 本地导入，
+  scriptUrl: ''
 })
 
 export default defineComponent({

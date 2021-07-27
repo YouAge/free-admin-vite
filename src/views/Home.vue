@@ -1,6 +1,6 @@
 <!--github： https://github.com/YouAge-->
 <template>
-  <div>
+  <div class="home-content">
     <a-table :columns="columns" :data-source="data" bordered>
       <template #name="{ text }">
         <a>{{ text }}</a>

@@ -35,9 +35,6 @@
 </script>
 
 <style scoped lang="less">
-.free-page-view{
-  min-height: calc(100vh - @base-header-default - 35px);
-  margin: 10px 15px;
-}
+
 
 </style>

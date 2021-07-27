@@ -30,8 +30,14 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: '404',
         name: '404',
-        component: () => import('@/views/Error404.vue'),
+        component: () => import('@/views/Error/Error404.vue'),
         meta: { title: '404', icon: 'icon-shouye' }
+      },
+      {
+        path: '403',
+        name: '403',
+        component: () => import('@/views/Error/Error403.vue'),
+        meta: { title: '403', icon: 'icon-shouye' }
       }
     ]
   },
@@ -44,7 +50,7 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: 'user',
         name: 'user',
-        component: () => import('@/views/Home.vue'),
+        component: () => import('@/views/Admin/access/access.vue'),
         meta: { title: '用户管理', icon: 'icon-shouye' }
       },
       {
